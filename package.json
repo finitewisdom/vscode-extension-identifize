@@ -1,0 +1,102 @@
+{
+	"name": "identifize",
+	"displayName": "Identifize",
+	"publisher": "finitewisdom",
+	"description": "The Identifize extension for Visual Studio Code makes it easy to format identifiers by replacing non-alphanumeric characters in the selection with either hyphens or underscores, and forcing the entire string to either lowercase or uppercase.",
+	"version": "1.0.0",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/finitewisdom/vscode-extension-identifize"
+	},
+	"homepage": "https://github.com/finitewisdom/vscode-extension-identifize/blob/master/README.md",
+	"engines": {
+		"vscode": "^1.51.0"
+	},
+	"categories": [
+		"Snippets",
+		"Programming Languages",
+		"Other"
+	],
+	"keywords": [
+		"identifier",
+		"underscore",
+		"hyphen",
+		"lowercase",
+		"uppercase"
+	],
+	"preview": true,
+	"icon": "identifize.png",
+	"galleryBanner": {
+		"color": "#005DA6",
+		"theme": "dark"
+	},
+	"activationEvents": [
+		"onCommand:identifize.identifizeWithHyphensLowerCase",
+		"onCommand:identifize.identifizeWithHyphensUpperCase",
+		"onCommand:identifize.identifizeWithUnderscoresLowerCase",
+		"onCommand:identifize.identifizeWithUnderscoresUpperCase"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "identifize.identifizeWithHyphensLowerCase",
+				"title": "Identifize: Format Selection(s) with Hyphens (-) and force the result to lower case"
+			},
+			{
+				"command": "identifize.identifizeWithHyphensUpperCase",
+				"title": "Identifize: Format Selection(s) with Hyphens (-) and force the result to upper case"
+			},
+			{
+				"command": "identifize.identifizeWithUnderscoresLowerCase",
+				"title": "Identifize: Format Selection(s) with Underscores (_) and force the result to lower case"
+			},
+			{
+				"command": "identifize.identifizeWithUnderscoresUpperCase",
+				"title": "Identifize: Format Selection(s) with Underscores (_) and force the result to upper case"
+			}
+		],
+		"keybindings": [
+			{
+				"key": "ctrl+k F5",
+				"command": "identifize.identifizeWithHyphensLowerCase",
+				"when": "editorHasSelection || editorHasMultipleSelections"
+			},
+			{
+				"key": "ctrl+k shift-F5",
+				"command": "identifize.identifizeWithHyphensUpperCase",
+				"when": "editorHasSelection || editorHasMultipleSelections"
+			},
+			{
+				"key": "ctrl+k F6",
+				"command": "identifize.identifizeWithUnderscoresLowerCase",
+				"when": "editorHasSelection || editorHasMultipleSelections"
+			},
+			{
+				"key": "ctrl+k shift-F6",
+				"command": "identifize.identifizeWithUnderscoresUpperCase",
+				"when": "editorHasSelection || editorHasMultipleSelections"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.51.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.0",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.9.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.0.2",
+		"vscode-test": "^1.4.0"
+	},
+	"dependencies": {
+		"async": "^3.2.0"
+	}
+}

@@ -1,0 +1,12 @@
+todo
+====
+* fix this error:
+    * [finitewisdom.identifize]: When omitting the language, the value of `contributes.identifize.path` must be a `.code-snippets`-file. Provided value: ./snippets.json
+* how to handle all languages?
+* eliminate snippet implementation
+
+- test: https://Code.VisualStudio.Com/api/working-with-extensions/sample!!@@$$string/testing-extension
+    - how to write tests?
+
+- define better shortcut for alt-shift-i
+- we don't support multiple selections
